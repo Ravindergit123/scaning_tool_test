@@ -20,6 +20,10 @@ stages:
             backendAzureRmStorageAccountName: 'ravinderstg'
             backendAzureRmContainerName: 'ravindercon'
             backendAzureRmKey: 'ravi.tfstate'
+        - task: tfsec@1
+          displayName: tfsec-scanning
+          inputs:
+            version: 'v1.26.0'
         - task: TerraformTask@5
           displayName: plan
           inputs:
