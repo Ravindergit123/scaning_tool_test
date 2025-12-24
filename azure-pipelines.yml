@@ -1,5 +1,5 @@
 trigger: none
-pool: dec_pipe
+pool: scanning
 stages:
   - stage: 
     displayName: terraform_tool
