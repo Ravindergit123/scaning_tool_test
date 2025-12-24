@@ -9,4 +9,13 @@ stages:
         - task: TerraformInstaller@1
           inputs:
             terraformVersion: 'latest'
-        
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/module'
+            backendServiceArm: 'scanning_tool'
+            backendAzureRmResourceGroupName: 'ravinder_storage'
+            backendAzureRmStorageAccountName: 'ravinderstg'
+            backendAzureRmContainerName: 'ravindercon'
+            backendAzureRmKey: 'ravi.tfstate'
