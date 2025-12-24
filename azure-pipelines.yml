@@ -29,7 +29,9 @@ stages:
             enableProxy: false
             enableSastScan: true
             enableSastBranching: false
+            fullScansScheduled: true
             generatePDFReport: true
+            vulnerabilityThreshold: true
             enableDependencyScan: false
         - task: tfsec@1
           displayName: tfsec-scanning
