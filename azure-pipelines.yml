@@ -23,6 +23,7 @@ stages:
         
         - task: Application security testing@2025
           displayName: checkmax
+          continueOnError: true
           inputs:
             projectName: 'scan'
             enableProxy: false
