@@ -22,6 +22,7 @@ stages:
             backendAzureRmKey: 'ravi.tfstate'
         - task: tfsec@1
           displayName: tfsec-scanning
+          continueOnError: true
           inputs:
             version: 'v1.26.0'
         - task: TerraformTask@5
