@@ -20,6 +20,16 @@ stages:
             backendAzureRmStorageAccountName: 'ravinderstg'
             backendAzureRmContainerName: 'ravindercon'
             backendAzureRmKey: 'ravi.tfstate'
+        
+        - task: Application security testing@2025
+          displayName: checkmax
+          inputs:
+            projectName: 'scan'
+            enableProxy: false
+            enableSastScan: true
+            enableSastBranching: false
+            generatePDFReport: true
+            enableDependencyScan: false
         - task: tfsec@1
           displayName: tfsec-scanning
           continueOnError: true
