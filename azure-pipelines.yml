@@ -1,0 +1,12 @@
+trigger: none
+pool: dec_pipe
+stages:
+  - stage: 
+    displayName: terraform_tool
+    jobs:
+      - job: 
+        steps:
+        - task: TerraformInstaller@1
+          inputs:
+            terraformVersion: 'latest'
+        
